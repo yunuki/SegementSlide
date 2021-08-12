@@ -10,7 +10,7 @@ import UIKit
 
 extension SegementSlideViewController {
     
-    internal var topLayoutLength: CGFloat {
+    @objc open var topLayoutLength: CGFloat {
         let topLayoutLength: CGFloat
         if #available(iOS 11, *) {
             topLayoutLength = view.safeAreaInsets.top

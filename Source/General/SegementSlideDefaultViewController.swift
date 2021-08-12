@@ -63,7 +63,7 @@ extension SegementSlideDefaultViewController: SegementSlideDefaultSwitcherViewDe
         return switcherView.ssDataSource?.titles ?? []
     }
     
-    public func segementSwitcherView(_ segementSlideSwitcherView: SegementSlideDefaultSwitcherView, didSelectAtIndex index: Int, animated: Bool) {
+    @objc open func segementSwitcherView(_ segementSlideSwitcherView: SegementSlideDefaultSwitcherView, didSelectAtIndex index: Int, animated: Bool) {
         if contentView.selectedIndex != index {
             contentView.selectItem(at: index, animated: animated)
         }

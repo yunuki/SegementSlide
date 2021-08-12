@@ -30,12 +30,16 @@ open class SegementSlideViewController: UIViewController {
     internal var lastChildBouncesTranslationY: CGFloat = 0
     internal var cachedChildViewControllerIndex: Set<Int> = Set()
     
+    open var minimumHeight: CGFloat {
+        return 0
+    }
+    
     public var headerStickyHeight: CGFloat {
         let headerHeight = headerView.frame.height.rounded(.up)
         if edgesForExtendedLayout.contains(.top) {
-            return headerHeight - topLayoutLength
+            return headerHeight - topLayoutLength - minimumHeight
         } else {
-            return headerHeight
+            return headerHeight - minimumHeight
         }
     }
     public var switcherHeight: CGFloat {
